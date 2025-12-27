@@ -1,5 +1,12 @@
 # API de registro
 
+## Pré-requisitos
+
+- Node.js 18+
+- MySQL
+- npm
+
+
 ## Módulos instalados
 
 - `bcryptjs`
@@ -18,12 +25,7 @@ Este repositório contém uma API simples de registro (cadastro) em Node.js/Type
 
 ```bash
 npm install
-```
 
-2. (Opcional) Se quiser reinstalar os módulos que você citou:
-
-```bash
-npm i bcryptjs express mysql2 dotenv ts-node-dev
 ```
 
 ## Scripts e execução
@@ -33,7 +35,7 @@ Você pode adicionar um script `dev` no `package.json` para desenvolvimento com 
 ```json
 {
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
   }
 }
 ```
@@ -41,7 +43,7 @@ Você pode adicionar um script `dev` no `package.json` para desenvolvimento com 
 Ou executar diretamente com `npx`:
 
 ```powershell
-npx ts-node-dev --respawn --transpile-only src/index.ts
+npx ts-node-dev --respawn --transpile-only src/server.ts
 ```
 
 
@@ -57,7 +59,8 @@ npx ts-node-dev --respawn --transpile-only src/index.ts
 Adicione o seguinte SQL para criar o banco e a tabela de usuários:
 
 ```sql
-/*CREATE DATABASE registerAPI;
+
+CREATE DATABASE registerAPI;
 
 USE registerapi;
 
@@ -69,8 +72,21 @@ email VARCHAR(30) NOT NULL UNIQUE,
 password VARCHAR(255) NOT NULL,
 created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);*/
+);
+
 ```
 
+``` Insomnia ou Postman
 
+
+  Rota: http://localhost:3000/auth/register
+  Body:
+
+  {
+	"name": "Julio",
+	"email": "julio1@email.com",
+	"password": "123456"
+  }
+
+```
 ---
