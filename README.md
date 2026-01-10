@@ -83,9 +83,9 @@ updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
   Body:
 
   {
-	"name": "Julio",
-	"email": "julio1@email.com",
-	"password": "123456"
+	"name": "Seu nome",
+	"email": "Seu email",
+	"password": "Sua senha"
   }
 
 ```
